@@ -20,6 +20,13 @@
 	<!-- 注解支持 -->
 	<context:annotation-config></context:annotation-config>
 	
+	<!-- 使shiro的注解起作用，标志在方法上 -->
+	 <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor"/>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/> 
+    </bean>
+	
 	<!-- 自动注解扫描 -->
 	<context:component-scan base-package="com.mqm">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />

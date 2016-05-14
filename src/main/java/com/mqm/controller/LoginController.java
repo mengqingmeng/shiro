@@ -20,7 +20,7 @@ public class LoginController {
 	@Autowired UserServiceI userService;
 	
 	@RequestMapping("/toLogin")
-	public String loginGet(ModelMap model){
+	public String loginGet(){
 		return "/web/login/login";
 	}
 	
@@ -41,9 +41,26 @@ public class LoginController {
 		return "/web/login/loginSuccess";
 	}
 	
-	@RequestMapping("/admin")
+	@RequestMapping("/toRegister")
 	public String admin(){
-		return "/web/login/admin";
+		return "/web/register/register";
+	}
+	
+	@RequestMapping(value = "/registerPost",method = RequestMethod.POST)
+	public String registerPost(@RequestParam("username") String username,@RequestParam("password") String password){
+        SecurityUtils.getSecurityManager().logout(SecurityUtils.getSubject());  
+        // 登录后存放进shiro token  
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password);  
+        Subject subject = SecurityUtils.getSubject();  
+       
+        try {
+        	 subject.login(token);  
+		    }
+		    catch (AuthenticationException ae) {
+		    	System.out.println("登录失败:"+ae.getMessage());
+		    	return "/web/login/error";
+		    }
+		return "/web/login/loginSuccess";
 	}
 	
 }

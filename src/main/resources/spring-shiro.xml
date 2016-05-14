@@ -25,12 +25,6 @@
 		<!-- 配置Bean后置处理器 。会自动的调用和Spring整合后各个组件的声明周期方法-->
 	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
 	 
-	 	<!-- 使shiro的注解起作用，标志在方法上 -->
-	 <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
-          depends-on="lifecycleBeanPostProcessor"/>
-    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
-        <property name="securityManager" ref="securityManager"/>
-    </bean>
 	<!-- 配置shirofilter -->
 	 <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
@@ -48,6 +42,7 @@
         </property> -->
         <property name="filterChainDefinitions">
             <value>
+            	/shiro-logout = logout
             	/login.jsp = anon
                 /user.jsp = roles[user]
                 /admin.jsp = roles[admin]

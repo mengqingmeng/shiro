@@ -1,6 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <body>
 <h2>Hello World!</h2>
-<a href="web/toLogin">login</a>
+<a href="web/toLogin">登录</a></br>
+<a href="web/toRegister">注册</a>
 </body>
 </html>
