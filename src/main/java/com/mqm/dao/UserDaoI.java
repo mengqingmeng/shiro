@@ -1,4 +1,4 @@
-package com.mqm.base.dao;
+package com.mqm.dao;
 
 import java.util.List;
 

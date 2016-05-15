@@ -7,7 +7,7 @@ import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mqm.base.dao.UserDaoI;
+import com.mqm.dao.UserDaoI;
 import com.mqm.entity.User;
 
 @Service

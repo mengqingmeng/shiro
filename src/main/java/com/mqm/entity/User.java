@@ -1,9 +1,12 @@
 package com.mqm.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Index;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="sys_user")
@@ -13,7 +16,6 @@ public class User {
 	private String userName;
 	private String password;
 	private String email;
-	
 	@Id
 	@GeneratedValue
 	public int getId() {
@@ -40,6 +42,5 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 	
 }

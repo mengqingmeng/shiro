@@ -1,4 +1,4 @@
-package com.mqm.base.dao;
+package com.mqm.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

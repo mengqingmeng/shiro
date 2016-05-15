@@ -1,4 +1,4 @@
-package com.mqm.shiro.realm;
+package com.mqm.security;
 
 import javax.annotation.PostConstruct;
 

@@ -9,7 +9,7 @@
 				 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 	<!-- 配置进行授权和认证的realm -->
-	<bean id="myShiroRealm" class="com.mqm.shiro.realm.MyShiroRealm"></bean>
+	<bean id="myShiroRealm" class="com.mqm.security.MyShiroRealm"></bean>
 	
 	<!-- 配置缓存管理器 -->
 	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
