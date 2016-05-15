@@ -12,14 +12,14 @@
 	<bean id="myShiroRealm" class="com.mqm.security.MyShiroRealm"></bean>
 	
 	<!-- 配置缓存管理器 -->
-	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+<!-- 	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
         <property name="cacheManagerConfigFile" value="classpath:ehcache.xml"/>
-    </bean>
+    </bean> -->
 	
 	<!-- 配置shiro的sercuritymanager -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="myShiroRealm"></property>
-		 <property name="cacheManager" ref="cacheManager"/>
+		<!--  <property name="cacheManager" ref="cacheManager"/> -->
 	</bean>
 		
 		<!-- 配置Bean后置处理器 。会自动的调用和Spring整合后各个组件的声明周期方法-->
