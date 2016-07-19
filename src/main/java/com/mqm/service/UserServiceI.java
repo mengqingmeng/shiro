@@ -8,7 +8,7 @@ public interface UserServiceI{
 	
 	User getCurrentUser();
 
-    void createUser(String username, String email, String password);
+    void createUser(String username, String password);
 
     List<User> getAllUsers();
 

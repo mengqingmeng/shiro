@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.mqm.entity.User;
 import com.mqm.service.UserServiceI;
 
 
@@ -50,8 +51,9 @@ public class LoginController {
         SecurityUtils.getSecurityManager().logout(SecurityUtils.getSubject());  
         // 登录后存放进shiro token  
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);  
-        Subject subject = SecurityUtils.getSubject();  
+        Subject subject = SecurityUtils.getSubject(); 
        
+        userService.createUser(username, password);
         try {
         	 subject.login(token);  
 		    }

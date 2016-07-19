@@ -28,10 +28,9 @@ public class UserServiceImpl implements UserServiceI{
 	        }
 	    }
 
-	    public void createUser(String username, String email, String password) {
+	    public void createUser(String username, String password) {
 	        User user = new User();
 	        user.setUserName(username);
-	        user.setEmail(email);
 	        user.setPassword( new Sha256Hash(password).toHex() );
 	        userDAO.createUser( user );
 	    }
