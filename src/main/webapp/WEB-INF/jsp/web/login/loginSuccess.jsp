@@ -9,6 +9,6 @@
 </head>
 <body>
 <h1>登录成功</h1>
-<h2><shiro:principal></shiro:principal></h2>
+<h2><shiro:principal></shiro:principal> </h2>
 </body>
 </html>
