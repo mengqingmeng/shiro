@@ -13,16 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.mqm.commom.BaseController;
 import com.mqm.entity.User;
 import com.mqm.service.UserServiceI;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Controller
 @RequestMapping("web")
-public class LoginController {
-	Logger logger = LoggerFactory.getLogger(getClass());
-	
+public class LoginController extends BaseController{
 	@Autowired UserServiceI userService;
 	
 	@RequestMapping("/toLogin")
